@@ -48,7 +48,38 @@ public class Lowcomplexity implements Hospital {
 		return false;
 	}
 	
+
+	String haveDinningroom(Boolean dinningroom) {
+		if (dinningroom == true) {
+			return "Yes";
+		}else {
+			return "No";
+		}
+	}
 	
+	String haveQuirophan(Boolean quirophan) {
+		if (quirophan == true) {
+			return "Yes";
+		}else {
+			return "No";
+		}
+	}
+	
+	String haveMorgue(Boolean morgue) {
+		if (morgue == true) {
+			return "Yes";
+		}else {
+			return "No";
+		}
+	}
+	
+	String haveIntensiveCares(Boolean intensiveCares) {
+		if (intensiveCares == true) {
+			return "Yes";
+		}else {
+			return "No";
+		}
+	}
 
 	
 	

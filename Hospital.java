@@ -20,7 +20,7 @@ public interface Hospital {
 		}
 	}
 	
-	String havequirophan(Boolean quirophan) {
+	String haveQuirophan(Boolean quirophan) {
 		if (quirophan == true) {
 			return "Yes";
 		}else {
@@ -28,7 +28,7 @@ public interface Hospital {
 		}
 	}
 	
-	String havemorgue(Boolean morgue) {
+	String haveMorgue(Boolean morgue) {
 		if (morgue == true) {
 			return "Yes";
 		}else {
@@ -36,7 +36,7 @@ public interface Hospital {
 		}
 	}
 	
-	String haveintensiveCares(Boolean intensiveCares) {
+	String haveIntensiveCares(Boolean intensiveCares) {
 		if (intensiveCares == true) {
 			return "Yes";
 		}else {
