@@ -20,4 +20,9 @@ public String toString() {
 	return idItem + ": $" + price;
 }
 
+public void setPrice(double price) {
+	this.price = price;
+	
+}
+
 }

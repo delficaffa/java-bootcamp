@@ -2,6 +2,7 @@ import java.util.List;
 
 public class PaypalDiscount implements DiscountStrategy{
 	
+	
 	@Override
 	public double discountS(List<Item> items) {
 			double cheapest = 0;

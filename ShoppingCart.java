@@ -5,11 +5,15 @@ public class ShoppingCart {
 	
 	List<Item> items;
 	private PaymentStrategy paymentMethod;
-	private AplyDiscount discountMethod;
+	private ApplyDiscount discountMethod;
 	private Counter counter;
+	private Email email;
+	private MailStation mailStation;
 	
 	
 	public ShoppingCart() {
+		MailStation mailStation = new MailStation ();
+		this.mailStation = mailStation;
 		this.items =  new ArrayList<Item>();
 		counter = counter.getInstance();
 	}
@@ -20,6 +24,7 @@ public class ShoppingCart {
 	
 	public void addItem(Item item){
 		this.items.add(item);
+		mailStation.sendEmail(new Email("new item added"));
 	}
 	
 	public void removeItem(Item item){
@@ -42,11 +47,29 @@ public class ShoppingCart {
 	}
 	
 	public void pay() {
-		discountMethod = new AplyDiscount(paymentMethod, items);
+		discountMethod = new ApplyDiscount(paymentMethod, items);
 		double amountWithDiscount = discountMethod.getDiscount();
 		System.out.println("** Transaction ID 0000" + counter.getId() + " **");
 		paymentMethod.pay(amountWithDiscount);
+		System.out.print("\n");
+		mailStation.sendEmail(new Email("new transaction"));
+
+		
 	}
 
+	public void changeItemPrice(String id, double price) {
+		for (Item item : items) {
+			if (item.getIdItem() == id) {
+				item.setPrice(price);
+				mailStation.sendEmail(new Email("new item price"));
+				break;
+			}
+		}
+	}
+
+	public void setMailStation(MailStation mailStation) {
+		this.mailStation = mailStation;
+		
+	}
 	
 }

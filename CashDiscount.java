@@ -2,6 +2,7 @@ import java.util.List;
 
 public class CashDiscount implements DiscountStrategy{	
 	
+	
 	@Override
 	public double discountS(List<Item> items) {
 		double expensive = 0;

@@ -4,6 +4,10 @@ public class ShoppingCartTest {
 
 	public static void main(String[] args) {
 		ShoppingCart cart = new ShoppingCart();
+		MailStation mailStation = new MailStation();
+		cart.setMailStation(mailStation);
+		MailObserver manager = new Manager();
+		mailStation.addObserver(manager);
 		Scanner sc = new Scanner(System.in);
 		int option;
 		
@@ -15,6 +19,7 @@ public class ShoppingCartTest {
 		song.play();
 		System.out.print("\n");
 		
+		System.out.print("** MANAGER'S MAILS **\n");
 		
 		Item item1 = new Item("Fuit",20);
 		Item item2 = new Item("Book",50);
@@ -26,7 +31,7 @@ public class ShoppingCartTest {
 		cart.addItem(item2);
 		cart.addItem(item3);
 
-		Composite composite1 = new Composite("Technology",100);
+		OffersComposite composite1 = new OffersComposite("Technology",100,mailStation);
 		composite1.add(new Bid(item4));
 		composite1.add(new Bid(item5));
 		
