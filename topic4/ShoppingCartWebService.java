@@ -7,29 +7,25 @@ import javax.jws.WebService;
 
 public class ShoppingCartWebService implements ShoppingCartService {
 
-	ShoppingCartService cart = new ShoppingCart();
+	ShoppingCartService cart = (ShoppingCartService) new ShoppingCart();
 	
-	@Override
+
 	public void addItem(Item item) {
 		cart.addItem(item);
 	}
 
-	@Override
 	public void removeItem(Item item) {
 		cart.removeItem(item);
 	}
 
-	@Override
 	public void pay() {
 		cart.pay();
 	}
 
-	@Override
 	public double calculateTotal() {
 		return cart.calculateTotal();
 	}
 
-	@Override
 	public List<Item> getItems() {
 		return cart.getItems();
 	}

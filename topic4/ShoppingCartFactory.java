@@ -1,9 +1,10 @@
 package Delfii.Bootcamp.topic4;
 
 public class ShoppingCartFactory {
+	private ShoppingCartFactory() {}
 
 	public static ShoppingCartService getLocalService() {
-		return new ShoppingCart();
+		return (ShoppingCartService) new ShoppingCart();
 	}
 
 	public static ShoppingCartService getRemoteServiceUsingJms() {
